@@ -34,6 +34,7 @@ void main() {
 
 
     uint32_t second_counter = 0x0000;
+    uint32_t minutes, min_tens, min_ones, seconds, sec_tens, sec_ones, display
     bool up_down = 0;
     bool second_toggle = 0;
 
@@ -46,7 +47,19 @@ void main() {
 
        second_counter += 1;
 
-      reg_gpio = second_counter; // low order 16 bits will be displayed
+        minutes = ((second_counter / 60) % 60); //gets the number of minutes (<60)
+        min_tens = minutes / 10;    //gets 10's digit of minute timer
+        min_ones = minutes % 10;    //gets 1's digit of minute timer
+
+        seconds = second_counter % 60;//gets number of seconds (<60)
+        sec_tens = seconds / 10;    //gets 10's digit of seconds
+        sec_ones = seconds % 10;    //gets 1's digit of seconds
+
+        display = ((min_tens & 0x0F) << 12) | (min_ones << 8) | (sec_tens << 4) | sec_ones; //sets the display variable to each of the digits
+        
+        reg_gpio = (display & 0xFFFF) //low order 16 bits will be displayed
+
+      //**commented for minute timer reg_gpio = second_counter; // low order 16 bits will be displayed
 
   } // end of while(1)
 } // end of main program
