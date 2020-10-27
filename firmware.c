@@ -44,7 +44,10 @@ void main() {
       second_toggle = reg_gpio & 1; // LSB reg_gpio[0] is the second_toggle
       //up_down = (reg_gpio & 0b10) >> 1; // reg_gpio[1] is the up_down switch
 
-       second_counter += 1;
+      if(up_down ==1)
+      	second_counter += 1;
+      else
+	second_counter -= 1;
 
       reg_gpio = second_counter; // low order 16 bits will be displayed
 
