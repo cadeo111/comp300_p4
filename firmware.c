@@ -42,7 +42,7 @@ void main() {
       while((second_toggle & 1) == (reg_gpio & 1));/// waits until change
 
       second_toggle = reg_gpio & 1; // LSB reg_gpio[0] is the second_toggle
-      //up_down = (reg_gpio & 0b10) >> 1; // reg_gpio[1] is the up_down switch
+      up_down = (reg_gpio & 0b10) >> 1; // reg_gpio[1] is the up_down switch
 
       if(up_down ==1)
       	second_counter += 1;
