@@ -44,7 +44,7 @@ set_io -nowarn UART_RX  A1 # PIN_2
 set_io -nowarn PIN_3    B1 # PIN_3
 set_io -nowarn PIN_4    C2 # PIN_4
 set_io -nowarn PIN_5    C1 # PIN_5
-set_io -nowarn PIN_6    D2 # PIN_6
+set_io -nowarn COLON   D2 # PIN_6
 set_io -nowarn SEG[0]   D1 # PIN_7  SEG_A
 set_io -nowarn SEG[1]   E2 # PIN_8  SEG_B
 set_io -nowarn SEG[2]   E1 # PIN_9  SEG_C
