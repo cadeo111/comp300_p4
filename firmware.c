@@ -37,6 +37,7 @@ void main() {
     uint32_t alarm = 0x00000000;
     uint32_t minutes, min_tens, min_ones, seconds, sec_tens, sec_ones, display;
     bool up_down = 0;
+    bool start_stop = 0;
     bool second_toggle = 0;
     
     while (1) {

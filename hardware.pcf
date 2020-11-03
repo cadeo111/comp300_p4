@@ -67,7 +67,7 @@ set_io -nowarn COMM[0] C9 # PIN_17
 
 set_io -nowarn UP_DOWN  A9 # PIN_18
 
-set_io -nowarn PIN_19  B8 # PIN_19
+set_io -nowarn START_STOP  B8 # PIN_19
 set_io -nowarn PIN_20  A8 # PIN_20
 set_io -nowarn DBG[3]  B7 # PIN_21
 set_io -nowarn DBG[2]  A7 # PIN_22

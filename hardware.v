@@ -41,6 +41,7 @@ module hardware (
     // User inputs and outputs
     //
     input UP_DOWN, // HIGH = Count Up (send to GPIO)
+    input START_STOP, // HIGH = start counting (send to GPIO)
 
     output [3:0] DBG,  // 4 debug leds on breadboard
     output user_led,   // onboard LED
@@ -137,7 +138,7 @@ reg second_toggle;
 
 
 wire [31:0]  read_data;
-assign read_data = ((second_toggle & 32'b001) | ((UP_DOWN << 1) & 32'b010));
+assign read_data = ((second_toggle & 32'b001) | ((UP_DOWN << 1) & 32'b010) | ((START_STOP << 2) & 32'b0100));
 /// preload second timer state machine
 initial begin
   second_timer_state = timer_init;
