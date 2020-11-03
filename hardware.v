@@ -54,6 +54,8 @@ module hardware (
     assign pin_pu = 1'b1;
     assign pin_usbp = 1'b0;
     assign pin_usbn = 1'b0;
+    
+    wire start_stop = START_STOP;
 
     wire clk = clk_16mhz;
 
