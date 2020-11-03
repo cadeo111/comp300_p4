@@ -45,6 +45,7 @@ module hardware (
     output [3:0] DBG,  // 4 debug leds on breadboard
     output user_led,   // onboard LED
     output [3:0] COMM, // 4 common cathodes
+    output COLON, // colon on display board
     output [6:0] SEG   // seven segments 6=g, 5=f, ... 0=a
     //               (no comma on the last one)
     //////////////////////////////////
@@ -124,6 +125,9 @@ assign COMM = comm; // tie to output
 // ACTIVE HIGH
 reg [6:0] seg;
 assign SEG = seg; // tie to output
+
+//assign colon to second_toggle
+assign COLON = second_toggle;
 
 
 /// second timer signals
