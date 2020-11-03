@@ -136,9 +136,9 @@ localparam [23:0] timer_init = 24'hF423FF;
 reg [23:0] second_timer_state;
 reg second_toggle;
 
-
+wire start_stop = START_STOP;
 wire [31:0]  read_data;
-assign read_data = ((second_toggle & 32'b001) | ((UP_DOWN << 1) & 32'b010) | ((START_STOP << 2) & 32'b0100));
+assign read_data = ((second_toggle & 32'b001) | ((UP_DOWN << 1) & 32'b010) | ((start_stop << 2) & 32'b0100));
 /// preload second timer state machine
 initial begin
   second_timer_state = timer_init;
