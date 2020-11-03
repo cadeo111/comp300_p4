@@ -34,10 +34,10 @@ void main() {
 
 
     uint32_t second_counter = 0x0000;
+    uint32_t alarm = 0x00000000;
     bool up_down = 0;
     bool second_toggle = 0;
-
-
+    
     while (1) {
       while((second_toggle & 1) == (reg_gpio & 1));/// waits until change
 
@@ -45,8 +45,11 @@ void main() {
       //up_down = (reg_gpio & 0b10) >> 1; // reg_gpio[1] is the up_down switch
 
        second_counter += 1;
+        if (second_counter == 0x0008){ 
+            alarm = 0xF0000000; 
+        }
 
-      reg_gpio = second_counter; // low order 16 bits will be displayed
+        reg_gpio = second_counter | alarm;
 
   } // end of while(1)
 } // end of main program

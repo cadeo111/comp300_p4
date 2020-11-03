@@ -103,7 +103,7 @@ module hardware (
     reg [31:0] gpio; // register declaration for GPIO.
     //
     // Starter:
-    assign DBG = gpio[3:0];
+    assign DBG = gpio[31:28];
     assign user_led = gpio[4];
 /// sec is the 16 bit value we read from the C program
     reg [15:0] sec = gpio[15:0];
