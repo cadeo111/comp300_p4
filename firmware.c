@@ -35,7 +35,7 @@ void main() {
 
     uint32_t second_counter = 0x0000;
     uint32_t alarm = 0x00000000;
-    uint32_t minutes, min_tens, min_ones, seconds, sec_tens, sec_ones, display
+    uint32_t minutes, min_tens, min_ones, seconds, sec_tens, sec_ones, display;
     bool up_down = 0;
     bool second_toggle = 0;
     
